@@ -16,10 +16,13 @@
 * UI testing with Espresso and Uiautomator
 * Mockito
 
-## Architectures, two implementation,
+## Architectures, two implementations MVP and MVVM, both of them based on Clean architecture:
+** Clean architecture 
+https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/clean.jpg
 ** Clean + MVP
-
+https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/mvp.jpg
 ** Clean + MVVM
+https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/mvvm.jpg
 
 ## License
 
