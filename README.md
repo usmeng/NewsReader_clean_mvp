@@ -17,13 +17,13 @@
 * Mockito
 
 ## Architectures, two implementations MVP and MVVM, both of them based on Clean architecture:
-** [Clean architecture] (https://medium.com/@dmilicic/a-detailed-guide-on-developing-android-apps-using-the-clean-architecture-pattern-d38d71e94029)
+[Clean architecture](https://medium.com/@dmilicic/a-detailed-guide-on-developing-android-apps-using-the-clean-architecture-pattern-d38d71e94029)
 <img src='https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/clean.jpg' />
 
-** Clean + MVP
+[MVP](https://github.com/usmeng/android-boilerplate)
 <img src='https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/mvp.jpg' />
 
-** Clean + MVVM
+[MVVM](https://developer.android.com/topic/libraries/architecture/guide.html)
 <img src='https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/mvvm.jpg' />
 
 ## License
