@@ -17,13 +17,21 @@
 * Mockito
 
 ## Architectures, two implementations MVP and MVVM, both of them based on Clean architecture:
-[Clean architecture](https://medium.com/@dmilicic/a-detailed-guide-on-developing-android-apps-using-the-clean-architecture-pattern-d38d71e94029)
+[Clean architecture](https://medium.com/@dmilicic/a-detailed-guide-on-developing-android-apps-using-the-clean-architecture-pattern-d38d71e94029), sperate android project into 3 different layers, which are presenter, domain and data. Dependency Rule: source code dependencies can only point inwards and nothing in an inner circle can know anything at all about something in an outer circle.
 <img src='https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/clean.jpg' />
 
-[MVP](https://github.com/usmeng/android-boilerplate)
+[MVP](https://github.com/usmeng/android-boilerplate)The architecture of our Android apps is based on the MVP (Model View Presenter) pattern.
+
+* **View (UI layer)**: this is where Activities, Fragments and other standard Android components live. 
+
+* **Presenter**: presenters subscribe to RxJava Observables provided by the DataManager. 
+
+* **Model (Data Layer)**: this is responsible for retrieving, saving, caching and massaging data. 
 <img src='https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/mvp.jpg' />
 
 [MVVM](https://developer.android.com/topic/libraries/architecture/guide.html)
+* The most important thing you should focus on is the separation of concerns in your app. 
+* The second important principle is that you should drive your UI from a model, preferably a persistent model.
 <img src='https://github.com/usmeng/NewsReader_clean_mvp/blob/master/material/mvvm.jpg' />
 
 ## License
