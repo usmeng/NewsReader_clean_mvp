@@ -10,8 +10,8 @@ import java.util.List;
 
 public class SearchArticleResponse {
     public Docs response;
-    public String   status;
-    public String   copyright;
+    public String status;
+    public String copyright;
 
     public class Docs {
         public List<Article> docs;

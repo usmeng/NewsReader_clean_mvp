@@ -31,8 +31,7 @@ public class MainActivity extends BaseActivity implements
         mainPresenter = new MainPresenter(this);
         fragmentManager = getFragmentManager();
 
-        requestPermission(Manifest.permission.INTERNET).subscribe(
-                integer -> {
+        requestPermission(Manifest.permission.INTERNET).subscribe(integer -> {
                 if(savedInstanceState == null) {
                     articleListFragment = new ArticleListFragment();
                     fragmentManager.beginTransaction()
@@ -49,7 +48,7 @@ public class MainActivity extends BaseActivity implements
 
     @Override
     public void showArticles(List<Article> articles) {
-        ArticleListFragment listFragment = (ArticleListFragment) fragmentManager.findFragmentByTag(TAG);
+        ArticleListFragment listFragment = (ArticleListFragment) fragmentManager.findFragmentByTag(ArticleListFragment.TAG);
         if(listFragment == null) return;
         listFragment.loadData(articles);
     }

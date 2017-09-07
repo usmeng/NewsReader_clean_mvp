@@ -57,9 +57,9 @@ public class ArticleListFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "ArticleListFragment onViewCreated() method called");
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.article_recycleview);
-        mEditText = (EditText) view.findViewById(R.id.search_hint);
-        mSearchButton = (Button) view.findViewById(R.id.search_button);
+        mRecyclerView = view.findViewById(R.id.article_recycleview);
+        mEditText = view.findViewById(R.id.search_hint);
+        mSearchButton = view.findViewById(R.id.search_button);
         mSearchButton.setOnClickListener(v -> {
             String keyword = mEditText.getText().toString();
             if(keyword.length() > 0)

@@ -10,7 +10,7 @@ import io.reactivex.subjects.Subject;
 
 public class RxBus {
 
-    Subject bus = PublishSubject.create();
+    private Subject bus = PublishSubject.create();
 
     public void send(Object o) {
         bus.onNext(o);
