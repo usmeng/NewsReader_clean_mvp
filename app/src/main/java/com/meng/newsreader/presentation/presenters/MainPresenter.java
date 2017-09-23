@@ -3,6 +3,9 @@ package com.meng.newsreader.presentation.presenters;
 import com.meng.newsreader.data.ApiRetrofit;
 import com.meng.newsreader.presentation.views.IMainView;
 
+import java.util.Map;
+
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -17,15 +20,15 @@ public class MainPresenter {
         this.iMainView = iMainView;
     }
 
-    public void showArticles(String keyword) {
-        ApiRetrofit.getInstance().searchArticle(keyword)
+    public void showArticles(Map<String, String> map, final boolean loadMoreData) {
+        ApiRetrofit.getInstance().searchArticles(map)
             .subscribeOn(Schedulers.io())
-            .map(response -> response.response.docs)
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(articles -> iMainView.showArticles(articles));
+            .subscribe(articles -> iMainView.showArticles(articles, loadMoreData));
     }
 
     public void showArticle(int id) {
         iMainView.showArticle(id);
     }
+
 }

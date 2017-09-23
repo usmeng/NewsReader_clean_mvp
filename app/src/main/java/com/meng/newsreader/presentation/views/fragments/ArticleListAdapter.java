@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.meng.newsreader.R;
-import com.meng.newsreader.excutor.API;
+import com.meng.newsreader.data.ApiRetrofit;
 import com.meng.newsreader.presentation.beans.Article;
 import com.meng.newsreader.presentation.views.fragments.ArticleListFragment.ArticleListCallback;
 
@@ -60,11 +60,12 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
             });
         Article article = mList.get(position);
         holder.title.setText(article.snippet);
-        holder.summary.setText(article.lead_paragraph);
-        holder.info.setText(article.pub_date);
+//        holder.summary.setText(article.summary.length() != 0 ? article.summary : article.lead_paragraph);
+
+        holder.info.setText(article.source);
 
         if(article.multimedia.size() > 0) {
-            String url = new API().imageUrl(article.multimedia.get(0).url);
+            String url = ApiRetrofit.imageUrl(article.multimedia.get(0).url);
             Glide.with(mContext).load(url).into(holder.cover);
         }
 

@@ -1,11 +1,14 @@
 package com.meng.newsreader.data;
 
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.meng.newsreader.data.response.SearchArticleResponse;
 import com.meng.newsreader.presentation.beans.Article;
 
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
@@ -21,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiRetrofit {
 
     private static ApiRetrofit mApiRetrofit;
-    public RestAPI mApi;
+    private RestAPI mApi;
 
     private ApiRetrofit() {
         Gson gson = new GsonBuilder().setLenient().create();
@@ -35,17 +38,15 @@ public class ApiRetrofit {
                 .create(RestAPI.class);
     }
 
-    public OkHttpClient getClient() {
+    private OkHttpClient getClient() {
         return new OkHttpClient.Builder().build();
     }
 
-    public Observable<List<Article>> searchArticles(String keyword) {
-        return mApi.searchArticle(keyword).subscribeOn(Schedulers.io())
-                .map(response -> response.response.docs);
-    }
+    public Observable<List<Article>> searchArticles(Map<String, String> map) {
+        map.put("api_key", RestAPI.apiKey);
 
-    public Observable<SearchArticleResponse> searchArticle(String keyword) {
-        return mApi.searchArticle(keyword);
+        return mApi.searchArticle(map).subscribeOn(Schedulers.io())
+                .map(response -> response.response.docs);
     }
 
     public static ApiRetrofit getInstance() {
@@ -55,5 +56,9 @@ public class ApiRetrofit {
             }
         }
         return mApiRetrofit;
+    }
+
+    public static String imageUrl(String url) {
+        return "https://www.nytimes.com/" + url;
     }
 }

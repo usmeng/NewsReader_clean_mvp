@@ -45,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_hint" />
+            app:layout_constraintTop_toBottomOf="@id/search_hint"
+            tools:listitem="@layout/recycle_article_item2" />
     </android.support.constraint.ConstraintLayout>
 
 </layout>

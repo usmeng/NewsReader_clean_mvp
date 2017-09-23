@@ -5,6 +5,7 @@ import android.databinding.Bindable;
 
 import com.meng.newsreader.data.ApiRetrofit;
 import com.meng.newsreader.presentation.beans.Article;
+import com.meng.newsreader.presentation.beans.QueryMap;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ArticleListViewModel extends BaseObservable{
     public Observable<List<Article>> articles;
 
     public Observable<List<Article>> searchArticle(String keyword) {
-        articles = ApiRetrofit.getInstance().searchArticles(keyword);
+        articles = ApiRetrofit.getInstance().searchArticles(QueryMap.initValue(keyword));
         return articles;
     }
 

@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * Created by mengzhou on 7/3/17.
  */
-
 public class Article implements Serializable{
 
     public String _id;
@@ -14,17 +13,27 @@ public class Article implements Serializable{
     public String summary;
     public List<Media> multimedia;
     public String pub_date;
-//    public Author byline;
+    public Author byline;
     public String lead_paragraph;
-    public int word_count;
+    public int    word_count;
     public String source;
     public String web_url;
+    public HeadLine headline;
+    public String document_type;
+    public String new_desk;
+    public String ype_of_material;
+    public double score;
 
     public Article(){}
 
     public Article(String snippet, String lead_paragraph) {
         this.snippet = snippet;
         this.lead_paragraph = lead_paragraph;
+    }
+
+    public class HeadLine {
+        public String main;
+        public String kicker;
     }
 
     public class Media {

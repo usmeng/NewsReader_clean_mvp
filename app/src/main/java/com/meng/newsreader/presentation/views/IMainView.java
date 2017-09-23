@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface IMainView {
 
-    void showArticles(List<Article> articles);
+    void showArticles(List<Article> articles, boolean loadMoreData);
 
     void showArticle(int articleId);
 }
